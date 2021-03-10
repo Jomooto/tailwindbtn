@@ -7,10 +7,10 @@
 </head>
 <body class="m-20">
     <div class="mx-auto">
-        <button class="w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6 bg-blue-400 text-blue-900 hover:bg-red-300" onclick="showAlert(1)">Click here</button>
-        <button class="w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6 bg-blue-400 text-blue-900 hover:bg-gray-400" onclick="showAlert(2)">Click here two</button>
-        <button class="w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6 bg-blue-400 text-blue-900 hover:bg-green-500" onclick="showAlert(3)">Click here three</button>
-        <button class="w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6 bg-blue-400 text-blue-900 hover:bg-yellow-600" onclick="showAlert(4)">Click here Four</button>
+        <button class="w-full sm:w-full md:w-full lg:w-1/6 xl:w-1/6 bg-blue-400 text-blue-900 hover:bg-red-300" onclick="showAlert(1)">Click here</button>
+        <button class="w-full sm:w-full md:w-full lg:w-1/6 xl:w-1/6 bg-blue-400 text-blue-900 hover:bg-gray-400" onclick="showAlert(2)">Click here two</button>
+        <button class="w-full sm:w-full md:w-full lg:w-1/6 xl:w-1/6 bg-blue-400 text-blue-900 hover:bg-green-500" onclick="showAlert(3)">Click here three</button>
+        <button class="w-full sm:w-full md:w-full lg:w-1/6 xl:w-1/6 bg-blue-400 text-blue-900 hover:bg-yellow-600" onclick="showAlert(4)">Click here Four</button>
     </div>
     <div class="alerts absolute mt-8 bottom-0 right-20">
 
@@ -41,6 +41,10 @@
             if (document.getElementById(x).classList.contains('hidden')){
                 document.getElementById(x).classList.remove('hidden')
                 document.getElementById(x).classList.add('visible')
+                setTimeout(function () {
+                    document.getElementById(x).classList.add('hidden')
+                    document.getElementById(x).classList.remove('visible')
+                },3000)
             }else{
                 document.getElementById(x).classList.add('hidden')
                 document.getElementById(x).classList.remove('visible')
